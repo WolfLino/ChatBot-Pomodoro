@@ -46,10 +46,10 @@ namespace BotPomodoro.Dialogs
         }
 
         /// <summary>
-        /// Caso a intenção não seja reconhecida.
+        /// Caso a intenção seja de criação.
         /// </summary>
         [LuisIntent("Criacao")]
-        public async Task ConscienciaAsync(IDialogContext context, LuisResult result)
+        public async Task CriacaoAsync(IDialogContext context, LuisResult result)
         {
             int quantidade = 1;
             string tipo = "";
@@ -68,6 +68,26 @@ namespace BotPomodoro.Dialogs
 
                             case "dois":
                                 quantidade = 2;
+                                break;
+
+                            case "três":
+                                quantidade = 3;
+                                break;
+
+                            case "quatro":
+                                quantidade = 4;
+                                break;
+
+                            case "cinco":
+                                quantidade = 5;
+                                break;
+
+                            case "seis":
+                                quantidade = 6;
+                                break;
+
+                            case "sete":
+                                quantidade = 7;
                                 break;
 
                             default:
@@ -91,17 +111,23 @@ namespace BotPomodoro.Dialogs
 
             await context.PostAsync(resposta);
             context.Done<string>(null);
+
+            // Método para tratar a criação
+            // ...
         }
 
         /// <summary>
         /// Quando a intenção for para cancelar.
         /// </summary>
         [LuisIntent("Cancelamento")]
-        public async Task AjudarAsync(IDialogContext context, LuisResult result)
+        public async Task CancelarAsync(IDialogContext context, LuisResult result)
         {
             var response = "Irei cancelar o pomodoro.";
             await context.PostAsync(response);
             context.Done<string>(null);
+
+            // Método para tratar o cancelamento
+            // ...
         }
     }
 }

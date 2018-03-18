@@ -52,13 +52,13 @@ namespace BotPomodoro
             }
             else if (message.Type == ActivityTypes.ConversationUpdate)
             {
-                var resposta = message.CreateReply();
+                /*var resposta = message.CreateReply();
                 resposta.From = message.MembersAdded[message.MembersAdded.Count - 1];
                 resposta.Text = "Sou um bot em fase de testes, tenha paciência...\n" +
                                 "O meu trabalho é criar ou cancelar pomodoros. Tente me pedir coisas como:\n" +
                                 "* **Criar um pomodoro**\n" +
                                 "* **Iniciar 3 pomodoros de estudo**\n" +
-                                "* **Cancelar o último pomodoro**";
+                                "* **Cancelar o último pomodoro**";*/
 
                 
             }
